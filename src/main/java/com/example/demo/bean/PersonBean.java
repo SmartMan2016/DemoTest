@@ -21,9 +21,10 @@ public class PersonBean {
 	}
 	
 	public void create(){
-		
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		PersonService service = (PersonService) context.getBean("personService");
+		String contextPath = "applicationContext.xml";
+		String servicePath = "personService";
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(contextPath);
+		PersonService service = (PersonService) context.getBean(servicePath);
 		
 		service.create(person);
 		
